@@ -166,24 +166,7 @@ transform: scale(1.1);
   padding-bottom: 0.3rem;
   padding-left: 1rem;
 }
-.comma {
-  border: 0.1rem solid orange;
-  background-color: white;
-  padding: 2rem;
-  display: block;
-  margin-top: 2rem;
-  margin-bottom: 0;
-}
-.comma button {
-  float: right;
-}
-main {
-  background: rgb(255, 165, 0, 0.1);
-  border: 0.1rem solid o;
-  padding-top: 6rem;
-  padding-left: 2rem;
-  height: 60vh;
-}
+
 .ready {
   background: linear-gradient(rgb(255,255,0,0.1),rgb(255,165,0,0.3));
   padding: 4rem;

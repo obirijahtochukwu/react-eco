@@ -100,22 +100,11 @@ export default function HomePage() {
          <div className="link">
             <p>POST https://api.biswa.com/video/v1/assets</p>
          </div>
-         <p className='comma'>
-            {comma} <br/>
-               "input": 
-               "https://biswa.s3.amazonaws.com/ink.mp4",
-               "playback_policy": "public" <br/>
-            {commas}
-            <button className="btn-inline">run demo</button>
-         </p>
-         <main>
-            <p>The response will show here...</p>
-         </main>
          </div>
          <div className="col-11 mx-auto col-md-5">
             <h5 className='text-center mt-5 pb-3' style={{color:'orange'}}>STEP 2</h5>
             <h2 className='text-center py-4' >Stream it anywhere.</h2>
-            <p>Add the Playback ID to stream.mux.com. Mux instantly creates the right renditions for every device and bandwidth, resulting in lower costs and better viewer experiences. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio dignissimos iste non impedit delectus aspernatur officia saepe cupiditate qui adipisci?</p>
+            <p>Add the Playback ID to stream.biswa.com. biswa instantly creates the right renditions for every device and bandwidth, resulting in lower costs and better viewer experiences. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio dignissimos iste non impedit delectus aspernatur officia saepe cupiditate qui adipisci?</p>
                      <div className="link mb-5">
             <p>POST https://api.biswa.com/video/v1/assets</p>
          </div>
@@ -134,9 +123,9 @@ export default function HomePage() {
          <br/>
          <div className="row">
             <div className="col-md-6 mx-auto mt-5">
-               <h3 className='mb-3'>Better quality through data. Mux Data.</h3>
+               <h3 className='mb-3'>Better quality through data. biswa Data.</h3>
                <p className='mb-5'>Our meticulously designed metrics and powerful filtering tools help you see what your users are really experiencing, around the world and across devices.</p>
-               <button className="btn-outline">learn more about biswa dat</button>
+               <button className="btn-outline">learn more about biswa data</button>
             </div>
             <div className="col-md-6 mx-auto mt-5">
                <img src="../img/biswa.png" style={{width:'100%'}} className='img' alt=""/>

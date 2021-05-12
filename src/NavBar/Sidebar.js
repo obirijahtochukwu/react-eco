@@ -12,22 +12,30 @@ const Sidebar = () => {
       }`}
     >
       <aside className='sidebar'>
-        <button className='close-btn' onClick={closeSidebar}>
-          <FaTimes />
-        </button>
+        <div className="nav-head mb-4">
+          <h2 style={{color:'orangered',listStyle:"none",fontFamily:"cursive"}} className='close-btn1'>
+            jumia
+          </h2>
+          <button className='close-btn' onClick={closeSidebar}>
+            <FaTimes />
+          </button>
+        </div>
         <div className='sidebar-links'>
           {sublinks.map((item, index) => {
             const { links, page } = item;
             return (
               <article key={index}>
-                <h4 className='main-links'>{page}</h4>
+                <h5>{page}</h5>
+                <hr/>
                 <div className='sidebar-sublinks'>
                   {links.map((link, index) => {
                     const { to, icon, label } = link;
                     return (
-                      <Link key={index} to={to}>
+                      <Link key={index} to={to} onClick={closeSidebar}>
                         {icon}
                         {label}
+                        <hr/>
+                        <hr/>
                       </Link>
                     );
                   })}

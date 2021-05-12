@@ -1,8 +1,34 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+import { useHistory } from "react-router-dom";
 import { FaGlobe, FaTv, FaUnlock, FaVideo } from 'react-icons/fa';
-
+import data3 from '../meta';
 
 export default function HomePage() {
+   const [email,setEmail] = useState('');
+   const [emai,setEmai] = useState(data3.item[1]);
+   const [password,setPassword] = useState('')
+   const [tour,setTour] = useState([])
+   const history = useHistory();
+   useEffect(() => {
+      if(localStorage.getItem('user-info'))
+         history.push('/add')
+   }, [])
+ async function login() {
+    
+    console.warn(email,password);
+    let ite = {email,password};
+    const response = await fetch('https://www.getpostman.com/collections/ca4456d1d3f9a2d8cbd8',{
+       method : 'POST',
+       mode : "no-cors",
+       headers: {
+          'Content-Type': 'application/json',
+          "Accept": "application/json"},
+          body:JSON.stringify(ite)
+         });
+         const tour = await response.json();
+         localStorage.setIte('user-info',JSON.stringify(tour));
+         history.push('/add');
+ }
  return (
   <>
    <div className="container-fluid">
@@ -103,7 +129,7 @@ export default function HomePage() {
          </div>
          <div className="col-11 mx-auto col-md-5">
             <h5 className='text-center mt-5 pb-3' style={{color:'orange'}}>STEP 2</h5>
-            <h2 className='text-center py-4' >Stream it anywhere.</h2>
+            <h2 class Name='text-center py-4' >Stream it anywhere.</h2>
             <p>Add the Playback ID to stream.biswa.com. biswa instantly creates the right renditions for every device and bandwidth, resulting in lower costs and better viewer experiences. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio dignissimos iste non impedit delectus aspernatur officia saepe cupiditate qui adipisci?</p>
                      <div className="link mb-5">
             <p>POST https://api.biswa.com/video/v1/assets</p>
@@ -111,6 +137,14 @@ export default function HomePage() {
          </div>
       </div>
    </div>
+   <div className="text-uppercase">login page</div>
+   <input type="text" onChange={(e)=>setEmail(
+      e.target.value
+   )} placeholder='mail' className="form-control"/>
+   <br/>
+   <input type="password" onChange={(e)=>setPassword(
+      e.target.value)} placeholder='mail' className="form-control"/>
+   <button className='btn btn-primary' onClick={login} type='submit'>login</button>
    <div className="container-fluid">
       <div className="ready text-center">
          <h3 className="text-center">Ready to get started?</h3>

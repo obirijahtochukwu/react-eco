@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBars} from 'react-icons/fa';
+import { FaBars,FaCartPlus} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 
@@ -17,6 +17,12 @@ const Navbar = () => {
       closeSubmenu();
     }
   };
+  window.onclick = (e) => {
+    if (!e.target.classList.contains('link-btn1')) {
+      closeSubmenu();
+    }
+  };
+  
   return (
     <nav className='nav1' onMouseOver={handleSubmenu}>
       <div className='nav-center'>
@@ -25,6 +31,9 @@ const Navbar = () => {
             <h2 style={{color:'orangered',listStyle:"none",fontFamily:"cursive"}}>
             jumia</h2>
           </Link>
+          <Link to='./cart'>
+            <h4 className="text-center d-lg-none"><FaCartPlus/>cart</h4>
+          </Link>
           <button className='btn1 toggle-btn'style={{backgroundColor:"orangered"}} onClick={openSidebar}>
             <FaBars />
           </button>
@@ -32,17 +41,12 @@ const Navbar = () => {
         <ul className='nav-links1'>
           <li>
             <button className='link-btn1' onMouseOver={displaySubmenu}>
-              diswa video
+              products
             </button>
           </li>
           <li>
             <button className='link-btn1' onMouseOver={displaySubmenu}>
-              docs & tools
-            </button>
-          </li>
-          <li>
-            <button className='link-btn1' onMouseOver={displaySubmenu}>
-             company
+              developers
             </button>
           </li>
           <li>
@@ -52,7 +56,7 @@ const Navbar = () => {
           </li>
         </ul>
         <Link to='./cart'>
-          <button className="btn-outline signin-btn px-2 py-1">sign up
+          <button className="btn3 signin-btn px-2 py-1"><FaCartPlus className='fap'/> my cart
           </button>
         </Link>
       </div>

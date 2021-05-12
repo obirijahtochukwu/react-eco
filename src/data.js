@@ -1,38 +1,28 @@
+import { FaCreditCard, FaBook, FaAddressBook,FaUser } from 'react-icons/fa';
+import React from 'react';
 const sublinks = [
   {
-    page: 'diswa video',
+    page: 'products',
     links: [
-      { label: 'overview', to: '/' },
-      { label: 'features', to: '/' },
-      { label: 'live', to: '/' },
-      { label: 'encoding', to: '/' },
-      { label: 'pricing', to: '/' },
+      { label: 'phone accessories', icon: <FaCreditCard />, to: '/' },
+      { label: 'sporting goods', icon: <FaCreditCard />, to: '/' },
+      { label: 'shoes and canvas', icon: <FaCreditCard />, to: '/' },
     ],
   },
   {
-    page: 'docs & tools',
+    page: 'developers',
     links: [
-      { label: 'vidoe docs', to: '/products' },
-      { label: 'data docs', to: '/products' },
-      { label: 'api reference', to: '/cart' },
-      { label: 'open source', to: '/cart' },
-      { label: 'sdk', to: '/cart' },
-    ],
-  },
-  {
-    page: 'company',
-    links: [
-      { label: 'team', to: '/signin' },
-      { label: 'customers', to: '/createaccount' },
-      { label: 'parteners', to: '/signin' },
-      { label: 'jobs', to: '/createaccount' },
+      { label: 'plugins', icon: <FaBook />, to: '/products' },
+      { label: 'libraries', icon: <FaBook />, to: '/products' },
+      { label: 'help', icon: <FaBook />, to: '/cart' },
+      { label: 'billing', icon: <FaBook />, to: '/cart' },
     ],
   },
   {
     page: 'login',
     links: [
-      { label: 'sign in', to: '/signin' },
-      { label: 'create account', to: '/createaccount' },
+      { label: 'sign in', icon: <FaUser />, to: '/signin' },
+      { label: 'create account', icon: <FaAddressBook />, to: '/createaccount' },
     ],
   },
 ];

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Submenu = () => {
   const {
     isSubmenuOpen,
-    page: { links },
+    page: { page, links },
     location,
   } = useGlobalContext()
   const container = useRef(null)
@@ -23,19 +23,20 @@ const Submenu = () => {
     if (links.length > 3) {
       setColumns('col-4')
     }
-  }, [ location, links])
+  }, [page, location, links])
   return (
     <aside
       className={`${isSubmenuOpen ? 'submenu show' : 'submenu'}`}
       ref={container}
     >
       <section>
-       
+        <h4>{page}</h4>
         <div className={`submenu-center ${columns}`}>
           {links.map((link, index) => {
-            const { to, label } = link;
+            const { to, icon, label } = link;
             return (
               <Link key={index} to={to}>
+                {icon}
                 {label}
               </Link>
             )

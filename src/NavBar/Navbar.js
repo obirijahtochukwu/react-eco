@@ -1,67 +1,75 @@
 import React from 'react';
-import { FaBars,FaCartPlus} from 'react-icons/fa';
+import { FaDove, FaSistrix} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../context';
+import { sublinks } from '../data';
+import './Navbar.css';
 
 const Navbar = () => {
-  const { openSidebar, openSubmenu, closeSubmenu } = useGlobalContext();
-  const displaySubmenu = (e) => {
-    const page = e.target.textContent;
-    const tempBtn = e.target.getBoundingClientRect();
-    const center = (tempBtn.left + tempBtn.right) / 2;
-    const bottom = tempBtn.bottom - 3;
-    openSubmenu(page, { center, bottom });
-  };
-  const handleSubmenu = (e) => {
-    if (!e.target.classList.contains('link-btn1')) {
-      closeSubmenu();
-    }
-  };
-  window.onclick = (e) => {
-    if (!e.target.classList.contains('link-btn1')) {
-      closeSubmenu();
-    }
-  };
-  
-  return (
-    <nav className='nav1' onMouseOver={handleSubmenu}>
-      <div className='nav-center'>
-        <div className='nav-header'>
-          <Link to='/'>
-            <h2 style={{color:'orangered',listStyle:"none",fontFamily:"cursive"}}>
-            jumia</h2>
-          </Link>
-          <Link to='./cart'>
-            <h4 className="text-center d-lg-none"><FaCartPlus/>cart</h4>
-          </Link>
-          <button className='btn1 toggle-btn'style={{backgroundColor:"orangered"}} onClick={openSidebar}>
-            <FaBars />
-          </button>
+  const { handleChange, filteredItems, searchShow, name, edit, mapFilteredItems } = useGlobalContext();
+
+  function searchItems() {
+    if (searchShow) {
+      return (
+        <div>
+          {filteredItems.map((oppo)=>{
+          const {id, title} = oppo;
+            return (
+              <div className='d-flex align-items-center suggestions'>
+              <Link to='/searchitems'>
+                <FaSistrix className='m-2'/>
+                <span key={id} onClick={()=> edit(id)}>{title}</span>
+              </Link>
+              </div>
+            )
+          })}
         </div>
-        <ul className='nav-links1'>
-          <li>
-            <button className='link-btn1' onMouseOver={displaySubmenu}>
-              products
-            </button>
-          </li>
-          <li>
-            <button className='link-btn1' onMouseOver={displaySubmenu}>
-              developers
-            </button>
-          </li>
-          <li>
-            <button className='link-btn1' onMouseOver={displaySubmenu}>
-             login
-            </button>
-          </li>
-        </ul>
-        <Link to='./cart'>
-          <button className="btn3 signin-btn px-2 py-1"><FaCartPlus className='fap'/> my cart
-          </button>
+      )
+    }
+  }
+
+
+  return (
+    <article className="navbarr container-fluid mt-0">
+      <Link to='/'>
+        <span className="logo m-2">jumia <FaDove/> </span>
+      </Link>
+      <span className="search col-md- col-lg-6">
+        <input type="search" value={name} onChange={handleChange} placeholder='Search products...'  className="search-input"/> 
+        {name && <div className="search-list">
+          {searchItems()}
+        </div>}
+        <Link to='/searchitems'>
+          <button className="search-btn" onClick={mapFilteredItems}>search</button>
+        </Link>
+      </span> 
+      <div className="navbar-left col-md-5 mx-auto col-lg-4 justify-content-around">
+        <div className="navbar-left">
+          {sublinks.map((link)=>{
+            const {page, links} = link;
+            return (
+              <div className="category">
+                <button>{page}</button>
+                <span className="drop">
+                  {links.map((link)=>{
+                    const {label, to} = link;
+                    return (
+                      <Link to={to}>
+                        <div>{label}</div>
+                      </Link>
+                    )
+                  })}
+                </span>
+              </div>
+            )
+          })}
+        </div>
+        <Link to='/cart'>
+          <button className="cart">my cart</button> 
         </Link>
       </div>
-    </nav>
-  );
+    </article>
+  )
 };
 
 export default Navbar;

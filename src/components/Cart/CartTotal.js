@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function CartTotal() {
+export default function CartTotal({cartTotalCount, cartTotalPrice}) {
  return (
   <div>
-   <p></p>
+   <p>{cartTotalPrice}</p>
+   {cartTotalCount}
   </div>
  )
 }

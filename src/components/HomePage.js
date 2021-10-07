@@ -4,31 +4,34 @@ import { FaGlobe, FaTv, FaUnlock, FaVideo } from 'react-icons/fa';
 import data3 from '../meta';
 
 export default function HomePage() {
-   const [email,setEmail] = useState('');
-   const [emai,setEmai] = useState(data3.item[1]);
-   const [password,setPassword] = useState('')
-   const [tour,setTour] = useState([])
-   const history = useHistory();
-   useEffect(() => {
-      if(localStorage.getItem('user-info'))
-         history.push('/add')
-   }, [])
- async function login() {
-    
-    console.warn(email,password);
-    let ite = {email,password};
-    const response = await fetch('https://www.getpostman.com/collections/ca4456d1d3f9a2d8cbd8',{
-       method : 'POST',
-       mode : "no-cors",
-       headers: {
-          'Content-Type': 'application/json',
-          "Accept": "application/json"},
-          body:JSON.stringify(ite)
-         });
-         const tour = await response.json();
-         localStorage.setIte('user-info',JSON.stringify(tour));
-         history.push('/add');
- }
+   {/*
+   
+      const [email,setEmail] = useState('');
+      const [emai,setEmai] = useState(data3.item[1]);
+      const [password,setPassword] = useState('')
+      const [tour,setTour] = useState([])
+      const history = useHistory();
+      useEffect(() => {
+         if(localStorage.getItem('user-info'))
+            history.push('/add')
+      }, [])
+    async function login() {
+       
+       console.warn(email,password);
+       let ite = {email,password};
+       const response = await fetch('https://www.getpostman.com/collections/ca4456d1d3f9a2d8cbd8',{
+          method : 'POST',
+          mode : "no-cors",
+          headers: {
+             'Content-Type': 'application/json',
+             "Accept": "application/json"},
+             body:JSON.stringify(ite)
+            });
+            const tour = await response.json();
+            localStorage.setIte('user-info',JSON.stringify(tour));
+            history.push('/add');
+    }
+   */}
  return (
   <>
    <div className="container-fluid">

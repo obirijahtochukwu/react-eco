@@ -1,32 +1,23 @@
 import React from 'react'
-import { FaFacebookSquare } from 'react-icons/fa'
 
 export default function CreateAccount() {
  return (
   <>
-  <main className="sign">
-   <h3 className="uppercase text-muted text-center p-4"><i>create account</i></h3>
-   <div className="container">
-    <div className="row">
-     <div className="col-10 mx-auto col-md-7">
-      <form action="/">
-       <p className="text-capitalize"><i>first name</i></p>
-       <input type="text"/>
-       <p className="text-capitalize mt-3"> <i>last name</i></p>
-       <input type="text"/>
-       <p className="text-capitalize mt-3"> <i>e-mail</i></p>
-       <input type="text"/>
-       <p className="text-capitalize mt-3"> <i>password</i></p>
-       <input type="text"/>
-       <button type='submit' className='btn btn-outline-warning mt-2 font-weight-bold'>submit</button>
-      </form>
-      <button className="btn5 mt-4 p-1 mb-4">
-       <span className="float-left pl-1"><FaFacebookSquare/></span> <span className="text-center">login with facebook</span>
-      </button>
-     </div>
-    </div>
-   </div>
-  </main>
+    <div className="signup container-fluid d-flex align-items-center w-100 justify-content-center">
+      <div className="col-12 col-md-7 col-lg-5 mx-auto bg-white submit p-4">
+        <form action="submit">
+          <label htmlFor="name">first name:</label>
+          <input type="text" className="w-100 mb-3 p-1"/>
+          <label htmlFor="name">last name:</label>
+          <input type="text" className="w-100 mb-3 p-1"/>
+          <label htmlFor="email">email address:</label>
+          <input type="text" className="w-100 mb-3 p-1"/>
+          <label htmlFor="password">password:</label>
+          <input type="text" className="w-100 mb-3 p-1"/>
+          <button type='submit' className="w-100 mt-3 p-1">submit</button>
+        </form>
+      </div>
+    </div>  
   </>
  )
 }

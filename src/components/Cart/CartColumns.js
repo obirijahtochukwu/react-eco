@@ -3,7 +3,7 @@ import React from 'react'
 export default function CartColumns() {
  return (
   <>
-   <div className="container-fluid text-center d-none d-lg-block">
+   <div className="container-fluid text-center d-none">
     <div className="row pt-5">
      <div className="col-10 mx-auto col-lg-2">
       <p className="text-uppecase">products</p>

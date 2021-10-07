@@ -1,0 +1,22 @@
+{
+ "employees": [
+  {
+   "id": 1,
+   "first_name": "obirijah",
+   "last_name": "tochukwu",
+   "email": "tobirijah@gmail.com"
+  },
+  {
+   "id": 2,
+   "first_name": "nwani",
+   "last_name": "amara",
+   "email": "tobirijah@gmail.com"
+  },
+  {
+   "id": 3,
+   "first_name": "obirijah",
+   "last_name": "sixtu",
+   "email": "tobirijah@gmail.com"
+  }
+ ]
+}

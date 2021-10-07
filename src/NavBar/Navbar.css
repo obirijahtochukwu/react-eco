@@ -1,0 +1,167 @@
+@media screen and (max-width: 768px) {
+  .navbarr {
+    display: none !important;
+  }
+}
+.navbarr {
+  position: sticky;
+  top: 0;
+ display: flex;
+ align-items: center;
+ background-color: white;
+ padding-left: 0;
+ z-index: 1;
+  box-shadow: 2px 2px 8px 2px rgb(0, 0, 0, 0.2);
+}
+.logo {
+ display: flex;
+ align-items: center;
+ color: orange !important;
+ padding-left: 0.2rem;
+ text-transform: uppercase;
+ font-size: xx-large;
+ font-weight: 600;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.search {
+ display: flex;
+ margin-right: 0 !important;
+}
+.search-input {
+ width: 100%;
+ border: 0.1rem solid gray;
+ border-radius: 6px;
+ margin-right: 0.2rem;
+}
+.search-input:hover, .search-input:focus{
+ border-color: orange;
+}
+.search-list {
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  margin-top: 2.7rem;
+  width: 100%;
+  box-shadow: 2px 20px 800px 5000px rgb(0, 0, 0, 0.2);
+}
+
+.suggestions {
+  padding: 0.2rem;
+  color: gray !important;
+}
+.search-btn {
+  cursor: pointer;
+ color: white;
+ background-color: orange;
+ padding: 0.3rem;
+ text-transform: capitalize;
+ border: transparent;
+ border-radius: 5px;
+ box-shadow: 2px 2px 8px 2px rgb(0, 0, 0, 0.2);
+}
+.navbar-left {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.category {
+ cursor: pointer;
+ color: rgb(0, 0, 0, 0.5);
+ margin: 0;
+ width: 100%;
+}
+.category button {
+  color: rgb(0, 0, 0, 0.5);
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 0.6rem;
+  background-color: transparent;
+  border: transparent;
+}
+.category button:hover {
+  color: orange;
+  background-color: rgb(255, 165, 0, 0.1);
+}
+.category:hover .drop {
+  cursor: pointer;
+  color: orange;
+  opacity: 1;
+  visibility: visible;
+}
+.drop {
+  display: block;
+  color: rgb(255, 165, 0, 0.5) !important;
+  background-color: white;
+  padding: 0.7rem;
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0.5;
+  transition: all 0.2s ease-in;
+  box-shadow: 2px 2px 8px 5px rgb(0, 0, 0, 0.2);
+}
+.drop:hover .label{
+  background-color: rgb(255, 165, 0, 0.5);
+}
+.cart {
+ text-transform: capitalize;
+  color: orange;
+  background-color: white !important;
+  padding: 0.5rem;
+  border: 0.1rem solid orange;
+  border-radius: 5px;
+  align-items: center;
+  transition: all 0.6s ease-in;
+}
+.cart:hover {
+  background-color: orange !important;
+  color: white;
+}
+
+
+/* SIDEBAR */
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  align-items: center;
+  color: orange;
+  background-color: white;
+  padding-left: 0.2rem;
+  text-transform: uppercase;
+  font-size: x-large;
+  font-weight: 600;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-shadow: 2px 2px 8px 2px rgb(0, 0, 0, 0.2);
+}
+.bar-icon {
+  cursor: pointer;
+}
+.mb-logo {
+  letter-spacing: 0.2rem;
+  color: orange !important;
+}
+.navbar-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.oppp{
+  z-index: 1;
+}
+.total-count {
+  position: relative;
+}
+.count {
+  color: aliceblue;
+  background-color: orange;
+  padding: 0.2rem;
+  border-radius: 50px;
+  position: absolute;
+  top: -0.6rem;
+  right: -0.3rem;
+  font-size:small !important;
+}
